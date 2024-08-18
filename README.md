@@ -17,6 +17,16 @@ As the main character of the Great Army, he leads and manages services and provi
 -----
 Ney is the calculator of the army. It contains the pricing tools and the calculus libraries.
 
+# Berthier
+----------
+Berthier is a DataBase service in charge of gathering data from web ressources and maintaining a local database.
+
+Berthier uses multiple software ressources : 
+- Redis for cache management, 
+- SQL databases for data storage and accessibility
+- File management
+- URL requests 
+
 # Models
 --------
 Contains all DataStructures used in the entire code. Only constructors, accessors and operators overload must be declared in the models. 
