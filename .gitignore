@@ -1,0 +1,13 @@
+﻿.vscode
+(.*)/bin(.*)
+Buonaparte/bin
+Buonaparte/obj
+Buonaparte/wwwroot
+Model/obj
+Model/bin
+Ney/bin
+Ney/obj
+Tests/bin
+Tests/obj
+Tools/bin
+Tools/obj
