@@ -97,7 +97,7 @@ namespace Tools.Maths
         #endregion Fitting
 
         #region Functionnals
-        public static double NewtonRaphson(Func<double, double[], double> func, double startPoint, double[] parameters, double errorThreshold, int maxIterations)
+        public static double NewtonRaphson(Func<double, object[], double> func, double startPoint, object[] parameters, double errorThreshold=1e-6, int maxIterations=1000)
         {
             int step = 0;
             double error = startPoint - func(startPoint, parameters);
@@ -107,16 +107,16 @@ namespace Tools.Maths
                 error = startPoint - func(startPoint, parameters);
                 step++;
             }
-            while (Math.Abs(error) > errorThreshold || step < maxIterations);
+            while (Math.Abs(error) > errorThreshold && step < maxIterations);
             return startPoint;
         }
 
-        public static double Derivative(Func<double, double[], double> func, double x, double[] parameters, double step=1e-6)
+        public static double Derivative(Func<double, object[], double> func, double x, object[] parameters, double step=1e-6)
         {
             return func(x+step, parameters) - func(x-step, parameters) / (2*step);
         }
 
-        public static double Integral(Func<double, double[], double> func, double[] parameters, double lowerBound, double upperBound, double step=1e-3)
+        public static double Integral(Func<double, object[], double> func, object[] parameters, double lowerBound, double upperBound, double step=1e-3)
         {
             double result = 0;
             double x = lowerBound;
