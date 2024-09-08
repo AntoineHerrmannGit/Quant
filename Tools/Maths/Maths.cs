@@ -1,5 +1,5 @@
 ﻿using Models.Extensions;
-using Models.Models;
+using Models.Matrices;
 
 namespace Tools.Maths
 {
@@ -95,5 +95,39 @@ namespace Tools.Maths
                              .ToList();
         }
         #endregion Fitting
+
+        #region Functionnals
+        public static double NewtonRaphson(Func<double, double[], double> func, double startPoint, double[] parameters, double errorThreshold, int maxIterations)
+        {
+            int step = 0;
+            double error = startPoint - func(startPoint, parameters);
+            do
+            {
+                startPoint -= func(startPoint, parameters) / Derivative(func, startPoint, parameters);
+                error = startPoint - func(startPoint, parameters);
+                step++;
+            }
+            while (Math.Abs(error) > errorThreshold || step < maxIterations);
+            return startPoint;
+        }
+
+        public static double Derivative(Func<double, double[], double> func, double x, double[] parameters, double step=1e-6)
+        {
+            return func(x+step, parameters) - func(x-step, parameters) / (2*step);
+        }
+
+        public static double Integral(Func<double, double[], double> func, double[] parameters, double lowerBound, double upperBound, double step=1e-3)
+        {
+            double result = 0;
+            double x = lowerBound;
+            do
+            {
+                result += (func(x, parameters) + func(x+step, parameters) + 4*func(x+step/2, parameters)) * step / 6;
+                x += step;
+            }
+            while(x < upperBound);
+            return result;
+        }
+        #endregion Functionnals
     }
 }

@@ -122,6 +122,7 @@ public static class BlackSholes
     }
     #endregion Greeks
 
+    #region Private Methds
     private static double Phi(double x, double inf = -10, double nSteps = 100){
         double phi = 0;
         double dx = (x -inf) / nSteps;
@@ -138,4 +139,5 @@ public static class BlackSholes
         }
         return phi;
     }
+    #endregion Private Methds
 }
