@@ -1,4 +1,4 @@
-namespace Models.Logger;
+namespace Models.Enums;
 
 public enum LoggerLevel
 {

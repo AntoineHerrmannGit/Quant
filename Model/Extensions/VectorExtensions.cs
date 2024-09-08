@@ -1,4 +1,4 @@
-using Models.Vectors;
+using Models.Models.Vectors;
 
 namespace Models.Extensions;
 

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Models;
 using Ney.Interface;
 using System.Threading.Tasks;
-using Models.Enums.Logger.Interface;
+using Models.Models.Logger.Interface;
 
 namespace Ney.Application
 {

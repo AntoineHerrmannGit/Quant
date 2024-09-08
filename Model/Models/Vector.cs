@@ -1,7 +1,7 @@
 using System.Collections;
-using Models.Matrices;
+using Models.Models.Matrices;
 
-namespace Models.Vectors
+namespace Models.Models.Vectors
 {
     public class Vector : Matrix, IEnumerable<double>
     {

@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace Models.Models
+namespace Models.Models.TimeSerie
 {
     public class TimeSerie : IEnumerable<double>
     {

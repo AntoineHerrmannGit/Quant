@@ -1,5 +1,5 @@
 ﻿using Models.Extensions;
-using Models.Matrices;
+using Models.Models.Matrices;
 
 namespace Tools.Maths
 {

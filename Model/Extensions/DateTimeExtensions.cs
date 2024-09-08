@@ -1,5 +1,3 @@
-using System;
-
 namespace Models.Extensions;
 
 public static class DateTimeExtensions

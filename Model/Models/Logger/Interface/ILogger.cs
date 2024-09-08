@@ -1,6 +1,4 @@
-using System;
-
-namespace Models.Enums.Logger.Interface;
+namespace Models.Models.Logger.Interface;
 
 public interface ILogger
 {

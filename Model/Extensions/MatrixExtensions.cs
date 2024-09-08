@@ -1,4 +1,4 @@
-using Models.Matrices;
+using Models.Models.Matrices;
 
 namespace Models.Extensions
 {

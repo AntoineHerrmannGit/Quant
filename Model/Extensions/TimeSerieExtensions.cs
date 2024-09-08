@@ -1,4 +1,4 @@
-using Models.Models;
+using Models.Models.TimeSerie;
 
 namespace Models.Extensions
 {

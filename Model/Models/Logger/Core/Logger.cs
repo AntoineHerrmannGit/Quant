@@ -1,13 +1,17 @@
-using Models.Enums.Logger.Interface;
-using Models.Logger;
+using Models.Models.Logger.Interface;
+using Models.Enums;
 
-namespace Tools.Logger;
+namespace Models.Models.Logger.Core;
 
 public class Logger : ILogger
 {
     private string _file;
     private string _directory;
     private LoggerLevel _level;
+
+    public string File { get { return _file; } }
+    public string Dir { get { return _directory; } }
+    public LoggerLevel Level { get { return _level; } }
 
     public Logger(string file, LoggerLevel level = LoggerLevel.Information)
     {
@@ -28,7 +32,8 @@ public class Logger : ILogger
 
         _directory = currentDirectory;
     }
-    
+
+
     public void Debug(string message){}
     public void Info(string message){}
     public void Warning(string message){}

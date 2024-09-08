@@ -1,4 +1,4 @@
-namespace Models.Matrices
+namespace Models.Models.Matrices
 {
     public class Matrix
     {

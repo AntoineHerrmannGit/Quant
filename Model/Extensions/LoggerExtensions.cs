@@ -1,64 +1,65 @@
-using System;
+using Models.Models.Logger.Core;
+using Models.Enums;
 
 namespace Models.Extensions;
 
-public class LoggerExtensions
+public static class LoggerExtensions
 {
     #region  Streaming informations
-    public void Debug(this Logger logger, string message)
+    public static void Debug(this Logger logger, string message)
     {
-        if (_level >= LoggerLevel.Debug)
+        if (logger.Level >= LoggerLevel.Debug)
         {
-            message = FormatMessage(message);
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(_directory, "logs")))
+            message = logger.FormatMessage(message);
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(logger.Dir, "logs")))
             {
                 outputFile.WriteLine(message);
             }
         }
     }
 
-    public void Info(this Logger logger, string message)
+    public static void Info(this Logger logger, string message)
     {
-        if (_level >= LoggerLevel.Information)
+        if (logger.Level >= LoggerLevel.Information)
         {
-            message = FormatMessage(message);
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(_directory, "logs")))
+            message = logger.FormatMessage(message);
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(logger.Dir, "logs")))
             {
                 outputFile.WriteLine(message);
             }
         }
     }
     
-    public void Warning(this Logger logger, string message)
+    public static void Warning(this Logger logger, string message)
     {
-        if (_level >= LoggerLevel.Warning)
+        if (logger.Level >= LoggerLevel.Warning)
         {
-            message = FormatMessage(message);
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(_directory, "logs")))
+            message = logger.FormatMessage(message);
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(logger.Dir, "logs")))
             {
                 outputFile.WriteLine(message);
             }
         }
     }
     
-    public void Error(this Logger logger, string message)
+    public static void Error(this Logger logger, string message)
     {
-        if (_level >= LoggerLevel.Error)
+        if (logger.Level >= LoggerLevel.Error)
         {
-            message = FormatMessage(message);
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(_directory, "logs")))
+            message = logger.FormatMessage(message);
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(logger.Dir, "logs")))
             {
                 outputFile.WriteLine(message);
             }
         }
     }
     
-    public void Fatal(this Logger logger, string message)
+    public static void Fatal(this Logger logger, string message)
     {
-        if (_level >= LoggerLevel.Fatal)
+        if (logger.Level >= LoggerLevel.Fatal)
         {
-            message = FormatMessage(message);
-            using (StreamWriter outputFile = new StreamWriter(Path.Combine(_directory, "logs")))
+            message = logger.FormatMessage(message);
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(logger.Dir, "logs")))
             {
                 outputFile.WriteLine(message);
             }
@@ -68,10 +69,10 @@ public class LoggerExtensions
     #endregion Streaming informations
 
     #region Private
-    private string FormatMessage(string message)
+    private static string FormatMessage(this Logger logger, string message)
     {
         string timeStamp = DateTime.Now.ToString();
-        return $"[{timeStamp}] [{_level}] : {message}";
+        return $"[{timeStamp}] [{logger.Level}] : {message}";
     }
     #endregion Private
 }
