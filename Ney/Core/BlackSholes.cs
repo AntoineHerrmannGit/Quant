@@ -11,7 +11,7 @@ public static class BlackSholes
         if (calculationDate > option.Maturity) 
             return 0;
 
-        double maturity = calculationDate.ToMaturity(option.Maturity, metric);
+        double maturity = calculationDate.ToMaturity(option.Maturity).Days / 365;
 
         double d1 = (Math.Log(spot.Value / option.Strike) + (rate - 0.5*volatility*volatility)*maturity) / (volatility * Math.Sqrt(maturity));
         double d2 = d1 - volatility * Math.Sqrt(maturity);
@@ -34,7 +34,7 @@ public static class BlackSholes
         if (calculationDate > option.Maturity) 
             return 0;
 
-        double maturity = calculationDate.ToMaturity(option.Maturity, metric);
+        double maturity = calculationDate.ToMaturity(option.Maturity).Days / 365;
 
         double d1 = (Math.Log(spot.Value / option.Strike) + (rate - 0.5*volatility*volatility)*maturity) / (volatility * Math.Sqrt(maturity));
 
@@ -54,7 +54,7 @@ public static class BlackSholes
         if (calculationDate > option.Maturity) 
             return 0;
 
-        double maturity = calculationDate.ToMaturity(option.Maturity, metric);
+        double maturity = calculationDate.ToMaturity(option.Maturity).Days / 365;
 
         double d1 = (Math.Log(spot.Value / option.Strike) + (rate - 0.5*volatility*volatility)*maturity) / (volatility * Math.Sqrt(maturity));
         double d2 = d1 - volatility * Math.Sqrt(maturity);
@@ -82,7 +82,7 @@ public static class BlackSholes
         if (calculationDate > option.Maturity) 
             return 0;
 
-        double maturity = calculationDate.ToMaturity(option.Maturity, metric);
+        double maturity = calculationDate.ToMaturity(option.Maturity).Days / 365;
 
         double d1 = (Math.Log(spot.Value / option.Strike) + (rate - 0.5*volatility*volatility)*maturity) / (volatility * Math.Sqrt(maturity));
         double d2 = d1 - volatility * Math.Sqrt(maturity);
@@ -103,7 +103,7 @@ public static class BlackSholes
         if (calculationDate > option.Maturity) 
             return 0;
 
-        double maturity = calculationDate.ToMaturity(option.Maturity, metric);
+        double maturity = calculationDate.ToMaturity(option.Maturity).Days / 365;
 
         double d1 = (Math.Log(spot.Value / option.Strike) + (rate - 0.5*volatility*volatility)*maturity) / (volatility * Math.Sqrt(maturity));
 
@@ -114,7 +114,7 @@ public static class BlackSholes
         if (calculationDate > option.Maturity) 
             return 0;
 
-        double maturity = calculationDate.ToMaturity(option.Maturity, metric);
+        double maturity = calculationDate.ToMaturity(option.Maturity).Days / 365;
 
         double d1 = (Math.Log(spot.Value / option.Strike) + (rate - 0.5*volatility*volatility)*maturity) / (volatility * Math.Sqrt(maturity));
 
