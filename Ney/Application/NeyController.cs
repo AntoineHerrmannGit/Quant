@@ -1,9 +1,6 @@
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Ney.Interface;
-using System.Threading.Tasks;
 using Models.Models.Logger.Interface;
 
 namespace Ney.Application
@@ -23,6 +20,13 @@ namespace Ney.Application
 
         [HttpGet("price/option")]
         public async Task<IActionResult> PriceOption(Option option, Spot spot, double volatility, double rate, DateTime calculationDate)
+        {
+            var price = await _neyService.PriceOption(option, spot, volatility, rate, calculationDate).ConfigureAwait(false);
+            return Ok(price);
+        }
+
+        [HttpGet("price/greek")]
+        public async Task<IActionResult> Greeks(Option option, Spot spot, double volatility, double rate, DateTime calculationDate)
         {
             var price = await _neyService.PriceOption(option, spot, volatility, rate, calculationDate).ConfigureAwait(false);
             return Ok(price);

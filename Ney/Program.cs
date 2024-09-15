@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace Buonaparte;
+namespace Ney;
 
 public class Program
 {
@@ -19,7 +19,7 @@ public class Program
         {
             c.SwaggerDoc("v1", new OpenApiInfo 
             { 
-                Title = "Buonaparte", 
+                Title = "Ney", 
                 Version = "v1" 
             });
         });
@@ -33,7 +33,7 @@ public class Program
             app.UseSwagger();
             app.UseSwaggerUI(c => 
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Buonaparte");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ney");
                 c.RoutePrefix = string.Empty; // Pour exposer Swagger à la racine
             });
         }
