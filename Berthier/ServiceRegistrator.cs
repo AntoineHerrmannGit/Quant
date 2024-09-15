@@ -1,3 +1,4 @@
+using Berthier.Core.Data;
 using Berthier.Interface;
 using Berthier.Service;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,5 +13,7 @@ public static class ServiceRegistrator
 
         // Injection du service dans le conteneur de dépendance
         services.AddSingleton<IBerthierService, BerthierService>();
+        
+        services.AddTransient<IDataDownloader, DataDownloader>();
     }
 }
