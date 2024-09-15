@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Buonaparte.Interface;
-using Models.Models.Logger.Interface;
+using ILogger = Models.Models.Logger.Interface.ILogger;
 
 namespace Buonaparte.Application
 {
